@@ -7,13 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="clienteexamen" />
+        <module name="departamento-examen" />
         <module name="departamentoexamen" />
+        <module name="cliente-examen" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cliente-examen" options="-parameters" />
       <module name="clienteexamen" options="-parameters" />
+      <module name="departamento-examen" options="-parameters" />
       <module name="departamentoexamen" options="-parameters" />
     </option>
   </component>

@@ -1,5 +1,6 @@
 package com.clienteexamen.service;
 
+import com.clienteexamen.clients.DepartamentoClientRest;
 import com.clienteexamen.modelsentity.Cliente;
 import com.clienteexamen.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class ClienteServiceImpl implements ClienteService{
 
     @Autowired
     private ClienteRepository repository;
+
+    @Autowired
+    private DepartamentoClientRest client;
 
     @Override
     @Transactional(readOnly = true)
@@ -37,6 +41,7 @@ public class ClienteServiceImpl implements ClienteService{
     @Transactional
     public void eliminar(Long id) {
        repository.deleteById(id);
+       client.eliminarDepartamentoPorId(id);
     }
 
     @Override
