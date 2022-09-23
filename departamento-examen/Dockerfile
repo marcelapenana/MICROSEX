@@ -25,8 +25,8 @@ WORKDIR /app/
 
 COPY --from=builder /app/departamento-examen/target/departamento-examen-0.0.1-SNAPSHOT.jar .
 
-#ENTRYPOINT ["java","-jar", "./target/msvc-usuarios-0.0.1-SNAPSHOT.jar"]
+
 ENTRYPOINT ["java","-jar", "departamento-examen-0.0.1-SNAPSHOT.jar"]
 
 
-#docker build -t usuarios . -f .\departamento-examen\Dockerfile
+#docker build -t departamentos . -f .\departamento-examen\Dockerfile

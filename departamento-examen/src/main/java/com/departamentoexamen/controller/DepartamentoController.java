@@ -68,7 +68,7 @@ public class DepartamentoController {
     }
 
     @PutMapping("/asignar-cliente/{departamentoId}")
-    public ResponseEntity<?> asignarUsuario(@RequestBody Cliente cliente, @PathVariable Long departamentoId){
+    public ResponseEntity<?> asignarCliente(@RequestBody Cliente cliente, @PathVariable Long departamentoId){
         Optional<Cliente> o = null;
         try {
             o= service.asignarCliente(cliente, departamentoId);
@@ -83,7 +83,7 @@ public class DepartamentoController {
     }
 
     @PostMapping("/crear-cliente/{departamentoId}")
-    public ResponseEntity<?> crearUsuario(@RequestBody Cliente cliente, @PathVariable Long departamentoId){
+    public ResponseEntity<?> crearCliente(@RequestBody Cliente cliente, @PathVariable Long departamentoId){
         Optional<Cliente> o;
         try {
             o= service.crearCliente(cliente, departamentoId);
