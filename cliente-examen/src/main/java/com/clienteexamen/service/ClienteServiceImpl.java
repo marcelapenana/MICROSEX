@@ -41,7 +41,7 @@ public class ClienteServiceImpl implements ClienteService{
     @Transactional
     public void eliminar(Long id) {
        repository.deleteById(id);
-       client.eliminarDepartamentoPorId(id);
+       client.eliminarDepartamentoClientePorId(id);
     }
 
     @Override

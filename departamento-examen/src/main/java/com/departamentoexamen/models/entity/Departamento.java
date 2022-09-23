@@ -15,6 +15,9 @@ public class Departamento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
+    private String nombre;
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "departamento_id")
     private List<DepartamentoCliente> departamentoClientes;
@@ -23,8 +26,6 @@ public class Departamento {
     //referencia a la clase cliente en models
     private List<Cliente> clientes;
 
-    @NotEmpty
-    private String nombre;
 
     public Departamento() {
         departamentoClientes = new ArrayList<>();

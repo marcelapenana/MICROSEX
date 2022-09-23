@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface DepartamentoClientRest {
 
     @DeleteMapping("/eliminar-departamento-cliente/{id}")
-    void eliminarDepartamentoPorId(@PathVariable Long id);
+    void eliminarDepartamentoClientePorId(@PathVariable Long id);
 }
