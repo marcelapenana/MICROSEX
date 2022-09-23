@@ -18,14 +18,14 @@ public class ClienteController {
 
     @GetMapping
     public Map< String, List<Cliente>> listar(){
-        return Collections.singletonMap("usuarios", service.listar());
+        return Collections.singletonMap("clientes", service.listar());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> detalle(@PathVariable Long id){
-        Optional<Cliente> usuarioOptional = service.porId(id);
-        if (usuarioOptional.isPresent()){
-            return ResponseEntity.ok(usuarioOptional.get());
+        Optional<Cliente> clienteOptional = service.porId(id);
+        if (clienteOptional.isPresent()){
+            return ResponseEntity.ok(clienteOptional.get());
         }
         return ResponseEntity.notFound().build();
     }
